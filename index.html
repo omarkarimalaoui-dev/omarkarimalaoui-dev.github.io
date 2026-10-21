@@ -211,11 +211,37 @@ section{padding-block:80px 0}
 .skill .stack{padding-top:0;align-items:flex-start}
 
 /* education */
-.edu{display:grid;border-top:1px solid var(--line)}
-.edu div{display:grid;grid-template-columns:220px minmax(0,1fr) auto;gap:32px;padding-block:20px;border-bottom:1px solid var(--line);align-items:baseline}
-.edu b{font-weight:600}
-.edu span{color:var(--muted);font-size:.9rem}
-@media (max-width:760px){.edu div{grid-template-columns:1fr;gap:4px}}
+.edu{display:grid;gap:20px}
+.edu-top{display:grid;grid-template-columns:190px minmax(0,1fr);gap:32px;align-items:center;padding:30px 30px 26px}
+.edu-level{display:grid;justify-items:center;gap:4px;padding:22px 12px;border:1.5px solid var(--accent);border-radius:12px;background:var(--accent-soft);text-align:center}
+.edu-level strong{font-family:var(--f-display);font-weight:800;font-size:clamp(2.4rem,4.6vw,3.2rem);line-height:1;letter-spacing:-.03em;color:var(--accent)}
+.edu-level .mono{color:var(--accent)}
+.edu-body{display:grid;gap:6px;justify-items:start;min-width:0}
+.edu-body h3{font-size:clamp(1.45rem,2.6vw,1.9rem);font-weight:800;letter-spacing:-.015em;margin-top:6px}
+.edu-body .stack{padding-top:8px}
+.years{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;padding:20px 30px 26px;border-top:1px solid var(--line);background:var(--glass-sunk)}
+.yr-step{display:grid;gap:3px;min-width:0}
+.yr-step .bar{display:block;position:relative;height:6px;border-radius:6px;background:var(--line);margin-bottom:8px;overflow:hidden}
+.yr-step.done .bar{background:var(--accent)}
+.yr-step.now .bar i{position:absolute;inset:0;width:45%;background:var(--accent);border-radius:6px;box-shadow:0 0 12px var(--accent)}
+.yr-step.now .bar i::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);animation:shine 2.4s ease-in-out infinite}
+.yr-step b{font-weight:600;font-size:.92rem}
+.yr-step.now b{color:var(--accent)}
+.yr-step small{font-family:var(--f-mono);font-size:.74rem;color:var(--muted);font-variant-numeric:tabular-nums}
+@keyframes shine{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+@media (prefers-reduced-motion: reduce){.yr-step.now .bar i::after{animation:none}}
+.edu-sub-in{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px;align-items:center}
+.edu-badge{display:grid;place-items:center;width:58px;height:58px;border-radius:12px;border:1.5px solid var(--line);font-family:var(--f-mono);font-size:.8rem;letter-spacing:.08em;color:var(--muted)}
+.edu-sub h3{font-size:1.2rem;font-weight:600}
+@media (max-width:760px){
+  .edu-top{grid-template-columns:1fr;gap:20px;padding:22px 20px 20px}
+  .edu-level{grid-auto-flow:column;justify-content:start;align-items:baseline;gap:12px;padding:14px 18px}
+  .years{grid-template-columns:1fr;gap:12px;padding:18px 20px 22px}
+  .yr-step{grid-template-columns:72px minmax(0,1fr) auto;align-items:center;gap:12px}
+  .yr-step .bar{margin:0}
+  .edu-sub-in{grid-template-columns:auto minmax(0,1fr);gap:16px}
+  .edu-sub-in .dates{grid-column:2}
+}
 
 /* letter */
 .sheet{background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:14px;max-width:780px;overflow:hidden;box-shadow:0 30px 60px -45px rgba(4,20,40,.45)}
@@ -569,8 +595,36 @@ body.locked{overflow:hidden}
       <section id="formation">
         <div class="sec-head"><span class="mono">Parcours</span><h2>Formation</h2></div>
         <div class="edu">
-          <div><span class="mono">2022 – 2027</span><p><b>Université Internationale de Rabat (UIR)</b><br><span>Cycle ingénieur en cybersécurité · 5e année, équivalent M2</span></p><span>Rabat</span></div>
-          <div><span class="mono">2019 – 2022</span><p><b>Collège-Lycée Elbilia</b><br><span>Baccalauréat Sciences Physiques-Chimie</span></p><span>Casablanca</span></div>
+          <article class="feature edu-main rv">
+            <div class="edu-top">
+              <div class="edu-level" aria-hidden="true"><span class="mono">Niveau</span><strong>Bac+5</strong><span class="mono">2027</span></div>
+              <div class="edu-body">
+                <span class="pill">En cours · 5e année</span>
+                <h3>Université Internationale de Rabat</h3>
+                <p class="role">Cycle ingénieur en cybersécurité</p>
+                <p class="place">Rabat, Maroc · 2022 – 2027 · équivalent Master 2</p>
+                <div class="stack"><span class="chip ref">Cybersécurité</span><span class="chip ref">Gouvernance, risques et conformité</span><span class="chip ref">Diplôme d'ingénieur 2027</span></div>
+              </div>
+            </div>
+            <div class="years" aria-label="Avancement du cycle : 5e année sur 5">
+              <div class="yr-step done"><span class="bar"></span><b>1re année</b><small>2022 – 2023</small></div>
+              <div class="yr-step done"><span class="bar"></span><b>2e année</b><small>2023 – 2024</small></div>
+              <div class="yr-step done"><span class="bar"></span><b>3e année</b><small>2024 – 2025</small></div>
+              <div class="yr-step done"><span class="bar"></span><b>4e année</b><small>2025 – 2026</small></div>
+              <div class="yr-step now"><span class="bar"><i></i></span><b>5e année · PFE</b><small>2026 – 2027</small></div>
+            </div>
+          </article>
+          <article class="entry edu-sub rv">
+            <div class="edu-sub-in">
+              <span class="edu-badge" aria-hidden="true">BAC</span>
+              <div>
+                <h3>Collège-Lycée Elbilia</h3>
+                <p class="role">Baccalauréat Sciences Physiques-Chimie</p>
+                <p class="place">Casablanca, Maroc</p>
+              </div>
+              <span class="dates">2019 – 2022</span>
+            </div>
+          </article>
         </div>
       </section>
 
