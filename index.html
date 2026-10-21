@@ -246,9 +246,13 @@ section{padding-block:80px 0}
 /* letter */
 .sheet{background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:14px;max-width:780px;overflow:hidden;box-shadow:0 30px 60px -45px rgba(4,20,40,.45)}
 .sheet-head{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 16px;padding:14px clamp(20px,4vw,40px);border-bottom:1px solid var(--line);background:var(--sunk)}
-.sheet-body{display:grid;gap:16px;padding:clamp(24px,4.5vw,48px) clamp(20px,4.5vw,48px) clamp(28px,5vw,52px);font-size:1rem;line-height:1.75}
-.sheet-body p{max-width:66ch;color:var(--muted)}
-.sheet .meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+.sheet-body{display:grid;gap:18px;padding:clamp(24px,4.5vw,52px) clamp(20px,4.5vw,52px) clamp(28px,5vw,56px);font-size:clamp(1.02rem,1.4vw,1.1rem);line-height:1.8}
+.sheet-body p{max-width:64ch;color:var(--fg)}
+.sheet-body strong{font-weight:600;color:var(--fg)}
+.sheet-body .hl{color:var(--fg);background:linear-gradient(transparent 62%,var(--accent-soft) 62%);padding:0 2px;border-radius:2px}
+.sheet-body .lead-p{font-size:1.14em;font-weight:500;line-height:1.7}
+.sheet-body .closing{color:var(--muted)}
+.pull{margin:4px 0;padding:18px 0 18px 24px;border-left:3px solid var(--accent);font-family:var(--f-display);font-weight:600;font-size:clamp(1.3rem,2.6vw,1.65rem);line-height:1.3;letter-spacing:-.01em;color:var(--accent);max-width:30ch;position:relative}.sheet .meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
 .sheet .obj{font-weight:600;color:var(--fg);padding:14px 16px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 8px 8px 0;line-height:1.55}
 .sheet .salute{color:var(--fg)}
 .sheet .sign{font-family:var(--f-display);font-weight:600;font-size:1.25rem;color:var(--fg);margin-top:6px;display:flex;align-items:center;gap:12px}
@@ -636,11 +640,13 @@ body.locked{overflow:hidden}
             <div class="sheet-body">
             <p class="obj">Objet : stage de fin d'études de 6 mois en Gouvernance, Risques et Conformité (GRC), à partir de février 2027</p>
             <p class="salute">Madame, Monsieur,</p>
-            <p>Élève ingénieur en 5e année de cybersécurité à l'Université Internationale de Rabat (UIR), je recherche un stage de fin d'études de 6 mois à partir de février 2027, dans le domaine de la gouvernance, des risques et de la conformité.</p>
-            <p>Mon stage GRC chez Intelcia m'a confirmé mon intérêt pour ce métier. J'y ai automatisé le suivi des plans d'action d'audit et des workflows de conformité PCI DSS, et conçu un portail de suivi de la conformité en temps réel sur deux référentiels, PCI DSS et ISO 27001. Mes stages chez Suez et à la Banque Populaire m'ont appris la gestion des accès sous Active Directory et les exigences de sécurité d'un secteur réglementé.</p>
-            <p>Ce parcours me donne un profil à la fois GRC et technique : je comprends les exigences des référentiels et je sais outiller leur suivi. Je souhaite mettre ces compétences au service de vos équipes, sur l'analyse des risques, la préparation des audits et le pilotage de la conformité.</p>
+            <p class="lead-p">Élève ingénieur en 5e année de cybersécurité à l'Université Internationale de Rabat (UIR), je recherche <strong class="hl">un stage de fin d'études de 6 mois à partir de février 2027</strong>, dans le domaine de la gouvernance, des risques et de la conformité.</p>
+            <p>Mon <strong class="hl">stage GRC chez Intelcia</strong> m'a confirmé mon intérêt pour ce métier. J'y ai automatisé le suivi des plans d'action d'audit et des workflows de conformité PCI DSS, et conçu <strong class="hl">un portail de suivi de la conformité en temps réel</strong> sur deux référentiels, PCI DSS et ISO 27001. Mes stages chez <strong>Suez</strong> et à la <strong>Banque Populaire</strong> m'ont appris la gestion des accès sous Active Directory et les exigences de sécurité d'un secteur réglementé.</p>
+            <p>Ce parcours me donne un profil à la fois GRC et technique :</p>
+            <blockquote class="pull">Je comprends les exigences des référentiels et je sais outiller leur suivi.</blockquote>
+            <p>Je souhaite mettre ces compétences au service de vos équipes, sur <strong class="hl">l'analyse des risques, la préparation des audits et le pilotage de la conformité</strong>.</p>
             <p>Je serais ravi d'échanger avec vous lors d'un entretien, à la date qui vous conviendra.</p>
-            <p>Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.</p>
+            <p class="closing">Je vous prie d'agréer, Madame, Monsieur, l'expression de mes salutations distinguées.</p>
             <p class="sign">Omar Karim El Alaoui</p>
             </div>
           </article>
